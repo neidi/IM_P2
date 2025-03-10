@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-files", "solution-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IM_P2", "IM_P2\IM_P2.csproj", "{AC1B3CDE-7B33-47F4-B3CB-BA2A489046F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IM_P2.FunctionsLibrary", "IM_P2.FunctionsLibrary\IM_P2.FunctionsLibrary.csproj", "{F06E70E8-A191-4325-924F-0F065F74BF84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,5 +25,9 @@ Global
 		{AC1B3CDE-7B33-47F4-B3CB-BA2A489046F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC1B3CDE-7B33-47F4-B3CB-BA2A489046F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC1B3CDE-7B33-47F4-B3CB-BA2A489046F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F06E70E8-A191-4325-924F-0F065F74BF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F06E70E8-A191-4325-924F-0F065F74BF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F06E70E8-A191-4325-924F-0F065F74BF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F06E70E8-A191-4325-924F-0F065F74BF84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
