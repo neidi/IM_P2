@@ -17,4 +17,23 @@ public class Bestellposition
     }
 
     public decimal Gesamtpreis => _produktPreis * _produktMenge;
+    
+    public Adresse? Versandadresse { get; private set; }
+    
+    public void SetzeVersandadresse(
+        string vorname,
+        string name,
+        string strasse,
+        int plz,
+        string ort)
+    {
+        Versandadresse = new Adresse(vorname, name, strasse, plz, ort);
+    }
 }
+
+public record Adresse(
+    string Vorname,
+    string Name,
+    string Strasse,
+    int Plz,
+    string Ort); 
