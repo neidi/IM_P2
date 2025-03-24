@@ -27,6 +27,11 @@ public class Bestellposition
         int plz,
         string ort)
     {
+        if (Versandadresse != null)
+        {
+            throw new NotSupportedException("Changing the Versandadresse is not (yet) supported");
+        }
+        
         Versandadresse = new Adresse(vorname, name, strasse, plz, ort);
     }
 }
