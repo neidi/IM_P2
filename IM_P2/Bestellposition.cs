@@ -16,8 +16,5 @@ public class Bestellposition
         _produktMenge = produktMenge;
     }
 
-    public decimal BerechneGesamtpreis()
-    {
-        return _produktPreis * _produktMenge;
-    }
+    public decimal Gesamtpreis => _produktPreis * _produktMenge;
 }
