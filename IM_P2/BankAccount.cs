@@ -8,12 +8,17 @@ public class BankAccount
 
     public BankAccount(string accountHolderName, Address address)
     {
-        throw new NotImplementedException();
+        AccountHolderName = accountHolderName;
+        AccountHolderAddress = address;
+        _balance = 0M;
     }
 
-    public object Balance { get; set; }
-    public object AccountHolderName { get; set; }
-    public object AccountHolderAddress { get; set; }
+    public decimal Balance
+    {
+        get { return _balance; }
+    }
+    public string AccountHolderName { get; }
+    public Address AccountHolderAddress { get; }
 
     public void Withdraw(decimal amount)
     {
