@@ -27,6 +27,11 @@ public class BankAccount
 
     public void Deposit(decimal amount)
     {
+        if (amount == 0M)
+        {
+            throw new DepositImpossibleException();
+        }
+
         _balance += amount;
     }
 }
