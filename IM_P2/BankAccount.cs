@@ -22,6 +22,10 @@ public class BankAccount
 
     public void Withdraw(decimal amount)
     {
+        if (_balance == 0M)
+        {
+            throw new WithdrawalImpossibleException();
+        }
         _balance -= amount;
     }
 
@@ -31,7 +35,6 @@ public class BankAccount
         {
             throw new DepositImpossibleException();
         }
-
         _balance += amount;
     }
 }
