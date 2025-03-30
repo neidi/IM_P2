@@ -2,9 +2,9 @@ namespace IM_P2;
 
 public class BankAccount
 {
-    public string _accountHolderName;
-    public Address _accountHolderAddress;
-    public decimal _balance;
+    private string _accountHolderName;
+    private Address _accountHolderAddress;
+    private decimal _balance;
 
     public BankAccount(string accountHolderName, Address address)
     {
