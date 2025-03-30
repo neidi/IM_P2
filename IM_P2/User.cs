@@ -9,6 +9,7 @@ public class User
     public User(string username, string password)
     {
         _username = username;
+        _password = password;
     }
 
     public string Username => _username;
