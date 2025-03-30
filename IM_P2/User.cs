@@ -2,9 +2,9 @@ namespace IM_P2;
 
 public class User
 {
-    public string _username;
+    private string _username;
 
-    public string _password;
+    private string _password;
 
     public User(string username, string password)
     {
