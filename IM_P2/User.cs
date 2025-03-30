@@ -8,8 +8,8 @@ public class User
 
     public User(string username, string password)
     {
-        throw new NotImplementedException();
+        _username = username;
     }
 
-    public object Username { get; set; }
+    public string Username => _username;
 }
