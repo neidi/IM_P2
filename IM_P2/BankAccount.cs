@@ -2,27 +2,26 @@ namespace IM_P2;
 
 public class BankAccount
 {
-    private decimal _balance;
-
     public BankAccount(string accountHolderName, Address address)
     {
         AccountHolderName = accountHolderName;
         AccountHolderAddress = address;
-        _balance = 0M;
+        Balance = 0M;
     }
 
-    public decimal Balance => _balance;
+    public decimal Balance { get; private set; }
+
     public string AccountHolderName { get; }
     public Address AccountHolderAddress { get; }
 
     public void Withdraw(decimal amount)
     {
-        if (_balance == 0M)
+        if (Balance == 0M)
         {
             throw new WithdrawalImpossibleException();
         }
 
-        _balance -= amount;
+        Balance -= amount;
     }
 
     public void Deposit(decimal amount)
@@ -32,6 +31,6 @@ public class BankAccount
             throw new DepositImpossibleException();
         }
 
-        _balance += amount;
+        Balance += amount;
     }
 }
