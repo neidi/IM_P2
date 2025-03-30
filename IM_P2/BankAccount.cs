@@ -2,8 +2,6 @@ namespace IM_P2;
 
 public class BankAccount
 {
-    private string _accountHolderName;
-    private Address _accountHolderAddress;
     private decimal _balance;
 
     public BankAccount(string accountHolderName, Address address)
