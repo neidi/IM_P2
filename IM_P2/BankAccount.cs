@@ -11,10 +11,7 @@ public class BankAccount
         _balance = 0M;
     }
 
-    public decimal Balance
-    {
-        get { return _balance; }
-    }
+    public decimal Balance => _balance;
     public string AccountHolderName { get; }
     public Address AccountHolderAddress { get; }
 
@@ -24,6 +21,7 @@ public class BankAccount
         {
             throw new WithdrawalImpossibleException();
         }
+
         _balance -= amount;
     }
 
@@ -33,6 +31,7 @@ public class BankAccount
         {
             throw new DepositImpossibleException();
         }
+
         _balance += amount;
     }
 }
