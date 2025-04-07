@@ -7,4 +7,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Reference Include="BM_P2_Lib">
+        <HintPath>lib\BM_P2_Lib.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

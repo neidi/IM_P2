@@ -25,4 +25,10 @@
       <ProjectReference Include="..\IM_P2\IM_P2.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="BM_P2_Lib">
+        <HintPath>..\IM_P2\lib\BM_P2_Lib.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
