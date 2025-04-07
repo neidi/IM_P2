@@ -21,4 +21,8 @@
         <Using Include="Xunit"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\IM_P2\IM_P2.csproj" />
+    </ItemGroup>
+
 </Project>
