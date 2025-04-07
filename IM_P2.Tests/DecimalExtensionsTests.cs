@@ -4,7 +4,7 @@ public class DecimalExtensionsTests
 {
     [Theory]
     [InlineData(10, "CHF", "10.00 CHF")]
-    [InlineData(14, "EUR", "14.00 EUR")]
+    [InlineData(14.45, "EUR", "14.45 EUR")]
     [InlineData(68, "USD", "68.00 USD")]
     public void ToCurrencyString_ShouldReturnFormattedString(decimal amount, string currency, string expected)
     {
