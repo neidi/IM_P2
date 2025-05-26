@@ -4,11 +4,11 @@ namespace IM_P2.CleanCodeExamples;
 
 public class ProductNotifier
 {
-    private readonly string _smtpHost;
+    private readonly ISmtpClient _smtpClient;
 
-    public ProductNotifier(string smtpHost)
+    public ProductNotifier(ISmtpClient smtpClient)
     {
-        _smtpHost = smtpHost;
+        _smtpClient = smtpClient;
     }
 
     public void Notify(Product product)
@@ -18,8 +18,7 @@ public class ProductNotifier
             Subject = "New Product",
             Body = $"Product: {product.Name}, Price: {product.Price}"
         };
-
-        using var smtp = new SmtpClient(_smtpHost);
-        smtp.Send(message);
+        
+        _smtpClient.Send(message);
     }
 }
