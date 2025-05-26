@@ -7,6 +7,7 @@ public class ProductProcessorTests
     [Fact]
     public void Process_WhenValidData_ProductsSavedAndNotified()
     {
+        var fakeFile = new FakeFile();
         // Arrange
         var rawData = new List<string>
         {
@@ -14,7 +15,7 @@ public class ProductProcessorTests
             "Product2,20.00"
         };
         const string filename = "test_products.txt";
-        var processor = new ProductProcessor(new ProductStorage(filename),
+        var processor = new ProductProcessor(new ProductStorage(filename, fakeFile),
                                              new ProductNotifier("smtp.example.com"));
         
         // Act

@@ -5,27 +5,23 @@ namespace IM_P2.Tests.CleanCodeExamples;
 public class ProductStorageTests
 {
     [Fact]
-    public void SaveProducts_WhenAreTwoProducts_FileContainsBothProducts()
+    public void SaveProducts_WhenHasTwoProducts_ShouldContainBothProductsInFile()
     {
         // Arrange
-        var filePath = "test_products.txt";
-        var storage = new ProductStorage(filePath);
+        var fakeFile = new FakeFile();
+        var sut = new ProductStorage("testfile.txt", fakeFile);
         var products = new List<Product>
         {
-            new Product("Product1", 10.99m),
-            new Product("Product2", 20.49m)
+            new(Name: "Product1", Price: 10.0m),
+            new(Name: "Product2", Price: 20.0m)
         };
 
         // Act
-        storage.SaveProducts(products);
+        sut.SaveProducts(products);
 
         // Assert
-        var fileContent = File.ReadAllLines(filePath);
-        Assert.Equal(2, fileContent.Length);
-        Assert.Contains("Product1,10.99", fileContent);
-        Assert.Contains("Product2,20.49", fileContent);
-
-        // Clean up
-        File.Delete(filePath);
+        var fileContent = fakeFile.FileContent.ToString();
+        Assert.Contains("Product1,10", fileContent);
+        Assert.Contains("Product2,20", fileContent);
     }
 }
