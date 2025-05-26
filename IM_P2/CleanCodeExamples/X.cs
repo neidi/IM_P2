@@ -2,27 +2,43 @@ using System.Net.Mail;
 
 namespace IM_P2.CleanCodeExamples;
 
-public class X
+public class ProductProcessor
 {
-    public void Y()
+    public void Notify()
     {
-        var l = new List<string>();
-        l.Add("Apfel,1.2");
-        l.Add("Banane,0.8");
-        l.Add("Keks,1.5");
+        var products = PrepareProductList();
 
-        foreach (var z in l)
+        foreach (var product in products)
         {
-            var t = z.Split(',');
-            var n = t[0];
-            var p = double.Parse(t[1]);
-
-            File.AppendAllText("products.csv", n + "," + p + Environment.NewLine);
-
-            MailMessage m = new MailMessage("system@example.com", "admin@example.com");
-            m.Subject = "New Product";
-            m.Body = $"Product: {n}, Price: {p}";
-            new SmtpClient("smtp.example.com").Send(m);
+            var (productName, productPrice) = CreateProducts(product);
+            AppendToFile(productName, productPrice);
+            NotifyAboutNewProduct(productName, productPrice);
         }
+    }
+
+    private static List<string> PrepareProductList()
+    {
+        return ["Apfel,1.2", "Banane,0.8", "Keks,1.5"];
+    }
+
+    private static (string ProductName, double ProductPrice) CreateProducts(string product)
+    {
+        var splitProduct = product.Split(',');
+        return (productName: splitProduct[0], productPrice: double.Parse(splitProduct[1]));
+    }
+
+    private static void AppendToFile(string productName, double productPrice)
+    {
+        File.AppendAllText("products.csv", productName + "," + productPrice + Environment.NewLine);
+    }
+
+    private static void NotifyAboutNewProduct(string productName, double productPrice)
+    {
+        var message = new MailMessage("system@example.com", "admin@example.com")
+        {
+            Subject = "New Product",
+            Body = $"Product: {productName}, Price: {productPrice}"
+        };
+        new SmtpClient("smtp.example.com").Send(message);
     }
 }
