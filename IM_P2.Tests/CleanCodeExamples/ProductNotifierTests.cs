@@ -17,7 +17,6 @@ public class ProductNotifierTests
         notifier.Notify(product);
         
         // Assert
-        // TODO: check if the notification was sent correctly
         var lastSent = smtpClientFake.Messages.Last();
         lastSent.Body.ShouldBe("Product: TestProduct, Price: 19.99");
         lastSent.Subject.ShouldBe("New Product");
